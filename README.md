@@ -16,6 +16,7 @@
     - [Requirements](#requirements)
     - [Build](#build)
     - [Deploy](#deploy)
+  - [Technologies Used](#technologies-used)
   - [Changelog](#changelog)
   - [Documentations](#documentations)
   - [Contributing](#contributing)
@@ -25,12 +26,14 @@
 
 Static Website with coop and multi game referential.
 
+TODO Refactor Order + How to add games in database
+
 ## Access
 
 - **Development (Local)** :
-  - [PartySearch Development](http://localhost:8008)
+  - [PartySearch Development](http://localhost:8080)
 - **Production (Local)** :
-  - [PartySearch Production](http://localhost:8008)
+  - [PartySearch Production](http://localhost:8080)
 - **Production** :
   - [PartySearch Production](https://partysearch)
 
@@ -66,6 +69,15 @@ docker-compose -f docker-compose.dev.yml up
 # Production
 docker-compose up
 ```
+
+## Technologies Used
+
+- **JS Framework** : [VueJS 3](https://vuejs.org/)
+- **JS Libraries** :
+  - [Axios](https://github.com/axios/axios)
+  - [JS-YAML](https://github.com/nodeca/js-yaml)
+  - TODO [muuri](https://muuri.dev/) OR [listjs](https://listjs.com/)
+- **CSS Framework** : TODO [tailwindcss](https://tailwindcss.com/) OR [milligram](https://milligram.io/)
 
 ## Changelog
 

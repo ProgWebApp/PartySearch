@@ -1,0 +1,21 @@
+---
+version: '3.6'
+
+services:
+  partysearch:
+    container_name: 'partysearch'
+    image: partysearch:1.0.0
+    build:
+      context: .
+      dockerfile: Dockerfile
+    healthcheck:
+      test: ["CMD", "wget", "-O", "/dev/null", "http://localhost:80"]
+      interval: 1m
+      timeout: 30s
+      retries: 3
+      start_period: 10s
+    volumes:
+    - ./src:/usr/share/nginx/html:ro
+    ports:
+    - 8080:80
+    restart: unless-stopped

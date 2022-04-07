@@ -1,0 +1,48 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Coop and multi game referential.">
+  <meta name="author" content="ProgOwer">
+
+  <title>PartySearch</title>
+
+  <link rel='shortcut icon' type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  </head>
+
+<body>
+  <div id="app">
+    <ul v-for="(data, key) in games" :key="key">
+      <li>{{ data.name }} (Players : {{ data.players }})</li>
+    </ul>
+  </div>
+
+  <script src="https://unpkg.com/vue@3"></script>
+  <script src="https://unpkg.com/axios"></script>
+  <script src="https://unpkg.com/js-yaml"></script>
+  <script>
+    Vue.createApp({
+      data: () => ({
+        games: [
+          {"name": "Testy 01", "players": 4},
+          {"name": "Testy 02", "players": 2},
+        ],
+      }),
+      mounted() {
+        axios
+        .get('/database/database.yml')
+        .then((response) => {
+          let data = jsyaml.load(response.data);
+          console.log(data);
+          data.forEach(element => {
+            this.games.push(element);
+          });
+        });
+      },
+    }).mount('#app')
+  </script>
+</body>
+</html>

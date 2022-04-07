@@ -4,12 +4,14 @@
 
 ## Table Of Contents
 
-- [PartySearch : Commands](#PartySearch--commands)
+- [PartySearch : Commands](#partysearch--commands)
   - [Table Of Contents](#table-of-contents)
   - [Commands](#commands)
 
 ## Commands
 
 ```bash
-TODO
+docker-compose build
+docker-compose up
+docker-compose down
 ```
