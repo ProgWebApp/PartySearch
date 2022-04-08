@@ -11,36 +11,43 @@
 
   <link rel='shortcut icon' type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> <!--Materialize -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!--Material Icons -->
   </head>
 
 <body>
   <div id="app">
-    <ul v-for="(data, key) in games" :key="key">
+    <!-- Display data -->
+    <ul v-for="(data, key) in dataList" :key="key">
       <li>{{ data.name }} (Players : {{ data.players }})</li>
     </ul>
   </div>
 
-  <script src="https://unpkg.com/vue@3"></script>
-  <script src="https://unpkg.com/axios"></script>
-  <script src="https://unpkg.com/js-yaml"></script>
+  <!-- JS Library -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script> <!--VueJS 3 -->
+  <script src="https://unpkg.com/axios"></script> <!--Axios -->
+  <script src="https://unpkg.com/js-yaml"></script> <!--JS YAML -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script> <!--ListJS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script> <!--ChartJS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> <!--Materialize -->
   <script>
     Vue.createApp({
       data: () => ({
-        games: [
-          {"name": "Testy 01", "players": 4},
-          {"name": "Testy 02", "players": 2},
-        ],
+        dataList: [],
       }),
+      methods: {
+        async getData() {
+          try {
+            let response = axios.get('/database/database.yml');
+            if (response !== null)
+              this.dataList = jsyaml.load(response.data);
+          } catch (error) { console.log(error); }
+        }
+      },
       mounted() {
-        axios
-        .get('/database/database.yml')
-        .then((response) => {
-          let data = jsyaml.load(response.data);
-          console.log(data);
-          data.forEach(element => {
-            this.games.push(element);
-          });
-        });
+        this.getData();
       },
     }).mount('#app')
   </script>

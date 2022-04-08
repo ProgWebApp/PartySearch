@@ -8,6 +8,8 @@
   - [Table Of Contents](#table-of-contents)
   - [Format](#format)
   - [How to add a new Game](#how-to-add-a-new-game)
+    - [Fully Manual Mode](#fully-manual-mode)
+    - [Semi-Auto Mode](#semi-auto-mode)
 
 ## Format
 
@@ -16,11 +18,10 @@ This website contains a list of games with cooperation or multiplayer capacity. 
 Each game have several fields :
 
 - **name** : Name of the Game
+- **slug** : IGDB Name
+- **summary** : Game Description
 - **icon** : URL of icon of the game
-- **banner** : URL of the banner of the game
-- **release_date** (DD-MM-YYYY) : Date of release of the game
 - **genres** : List of genre of the game
-- **plateforms** : List of plateforms available
 - **coop** : Cooperation fields
   - **available** (true or false) : Cooperation available
   - **min** (2) : Minimum number of player
@@ -37,12 +38,10 @@ Exemple in YAML format :
 
 ```yaml
 - name: ''
+  slug: ''
+  summary: ''
   icon : ''
-  banner: ''
-  release_date: ''
   genres:
-  - ''
-  plateforms:
   - ''
   coop:
     available: true
@@ -59,4 +58,16 @@ Exemple in YAML format :
 
 ## How to add a new Game
 
-TODO
+To add a new game, you have two possibility :
+
+### Fully Manual Mode
+
+1) Go to [IGDB](https://www.igdb.com/) and search the game you want to add.
+2) Check if the game not already exist in the database file (**src/database/database.yml**)
+3) Get each information bellow and dispose these into the database file.
+
+### Semi-Auto Mode
+
+1) Go to [IGDB](https://www.igdb.com/) and search the game you want to add.
+2) Get in the IGDB URL the "slug" name of the game (end of url, Dying Light = dying-light)
+3) Fill the last data in the database file (coop, multiplayer, self_hosted, download_size and installed_size).

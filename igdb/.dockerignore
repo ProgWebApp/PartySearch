@@ -1,18 +1,18 @@
 # Temporary Folder
-tmp
+**/tmp
 
 # VS Code
-.vscode
+**/.vscode
 
 # Environment File
-.env
+**/.env
 
 # Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
-.pytest_cache
+**/__pycache__/
+**/*.py[cod]
+**/*$py.class
+**/.pytest_cache
 
 # PEP 582; used by e.g. github.com/David-OConnor/pyflow
-__pypackages__/
-.pdm.toml
+**/__pypackages__/
+**/.pdm.toml

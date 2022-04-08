@@ -1,0 +1,17 @@
+---
+version: '3.6'
+
+services:
+  partysearch_igdb:
+    container_name: 'partysearch_igdb'
+    image: partysearch-igdb:1.0.0
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+    - IGDB_GAME_NAME=${PARTYSEARCH_IGDB_GAME_NAME}
+    - IGDB_CLIENT_ID=${PARTYSEARCH_IGDB_CLIENT_ID}
+    - IGDB_CLIENT_SECRET=${PARTYSEARCH_IGDB_CLIENT_SECRET}
+    volumes:
+    - ../src/database:/database:rw
+    restart: 'no'

@@ -26,7 +26,7 @@
 
 Static Website with coop and multi game referential.
 
-TODO Refactor Order + How to add games in database
+You can add game to this static database with this [documentation](./docs/database.md).
 
 ## Access
 
@@ -42,7 +42,22 @@ TODO Refactor Order + How to add games in database
 Here a sample of Docker Compose file : **docker-compose.yml**
 
 ```yaml
-TODO
+---
+version: '3.6'
+
+services:
+  partysearch:
+    container_name: 'partysearch'
+    image: partysearch:1.0.0
+    healthcheck:
+      test: ["CMD", "wget", "-O", "/dev/null", "http://localhost:80"]
+      interval: 1m
+      timeout: 30s
+      retries: 3
+      start_period: 10s
+    ports:
+    - 8080:80
+    restart: unless-stopped
 ```
 
 ### Requirements
@@ -76,8 +91,9 @@ docker-compose up
 - **JS Libraries** :
   - [Axios](https://github.com/axios/axios)
   - [JS-YAML](https://github.com/nodeca/js-yaml)
-  - TODO [muuri](https://muuri.dev/) OR [listjs](https://listjs.com/)
-- **CSS Framework** : TODO [tailwindcss](https://tailwindcss.com/) OR [milligram](https://milligram.io/)
+  - [ListJS](https://listjs.com/)
+  - [ChartJS](https://www.chartjs.org/)
+- **CSS Framework** : [Materialize](https://materializecss.com/)
 
 ## Changelog
 
@@ -87,6 +103,8 @@ See [CHANGELOG](./CHANGELOG.md) for more information.
 
 - [Ideas](./docs/ideas.md)
 - [Commands](./docs/commands.md)
+- [Database](./docs/database.md)
+- [IGDB](./docs/igdb.md)
 
 ## Contributing
 

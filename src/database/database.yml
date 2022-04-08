@@ -1,3 +1,27 @@
----
-- name: "Minecraft"
-  players: 4
+- coop:
+    available: true
+    max: -1
+    min: 2
+  download_size: 0.0
+  genres:
+  - Adventure
+  - Arcade
+  icon: //images.igdb.com/igdb/image/upload/t_thumb/co49x5.jpg
+  installed_size: 0.0
+  multiplayer:
+    available: true
+    max: -1
+    min: 1
+  name: Minecraft
+  self_hosted: true
+  slug: minecraft
+  summary: Minecraft focuses on allowing the player to explore, interact with, and
+    modify a dynamically-generated map made of one-cubic-meter-sized blocks. In addition
+    to blocks, the environment features plants, mobs, and items. Some activities in
+    the game include mining for ore, fighting hostile mobs, and crafting new blocks
+    and tools by gathering various resources found in the game. The game's open-ended
+    model allows players to create structures, creations, and artwork on various multiplayer
+    servers or their single-player maps. Other features include redstone circuits
+    for logic computations and remote actions, minecarts and tracks, and a mysterious
+    underworld called the Nether. A designated but completely optional goal of the
+    game is to travel to a dimension called the End, and defeat the ender dragon.

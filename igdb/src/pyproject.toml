@@ -1,0 +1,24 @@
+[project]
+name = ""
+version = ""
+description = ""
+authors = [
+    {name = "ProgOwer", email = "progower0770@gmail.com"},
+]
+dependencies = [
+    "igdb-api-v4==0.0.5",
+    "PyYAML==6.0",
+]
+requires-python = ">=3.9"
+license = {text = "MIT"}
+
+[project.urls]
+Homepage = ""
+[tool.pdm]
+
+[tool.pdm.scripts]
+launch = "python main.py"
+
+[build-system]
+requires = ["pdm-pep517"]
+build-backend = "pdm.pep517.api"
