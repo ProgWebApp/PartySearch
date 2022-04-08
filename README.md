@@ -24,7 +24,7 @@
 
 ## Description
 
-Static Website with coop and multi game referential.
+Static Website with coop and multi game referential. Online [HERE](https://progwebapp.gitlab.io/partysearch/).
 
 You can add game to this static database with this [documentation](./docs/database.md).
 
@@ -35,7 +35,7 @@ You can add game to this static database with this [documentation](./docs/databa
 - **Production (Local)** :
   - [PartySearch Production](http://localhost:8080)
 - **Production** :
-  - [PartySearch Production](https://partysearch)
+  - [PartySearch Production](https://progwebapp.gitlab.io/partysearch/)
 
 ## Getting Started
 
