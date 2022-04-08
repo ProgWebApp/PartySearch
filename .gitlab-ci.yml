@@ -1,0 +1,9 @@
+pages:
+  script:
+  - cp -r ./src .public
+  - mv .public public
+  artifacts:
+    paths:
+    - public
+  only:
+  - master

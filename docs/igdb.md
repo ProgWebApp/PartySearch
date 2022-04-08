@@ -29,6 +29,8 @@
 ### Build and Deploy
 
 ```bash
+cd igdb
+
 # Build
 docker-compose build
 
@@ -39,6 +41,7 @@ docker-compose up
 You can also do it with a inline command (after build) :
 
 ```bash
+cd igdb
 docker-compose run --rm partysearch_igdb pdm run launch minecraft
 ```
 

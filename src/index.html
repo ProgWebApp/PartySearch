@@ -13,16 +13,97 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
   <!-- CSS Stylesheet -->
+  <link href="/custom.css" rel="stylesheet"> <!--Custom CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> <!--Materialize -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!--Material Icons -->
   </head>
 
 <body>
   <div id="app">
-    <!-- Display data -->
-    <ul v-for="(data, key) in dataList" :key="key">
-      <li>{{ data.name }} (Players : {{ data.players }})</li>
-    </ul>
+    <header>
+      <nav>
+        <div class="nav-wrapper purple lighten-2">
+          <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <a href="/" class="brand-logo center">PartySearch</a>
+        </div>
+      </nav>
+  
+      <!-- Search, Sort and Filter -->
+      <ul id="slide-out" class="sidenav sidenav-fixed">
+        <li>
+          <div class="row">
+            <div class="input-field col s12">
+              <input class="search" id="search" type="text">
+              <label for="search">Search</label>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </header>
+
+    <main>
+      <!-- Display data -->
+      <table class="highlight centered responsive-table">
+        <thead>
+          <tr>
+              <th>Icon</th>
+              <th>Name</th>
+              <th>Genres</th>
+              <th>Coop</th>
+              <th>Multiplayer</th>
+              <th>Self Hosted</th>
+              <th>Download Size</th>
+              <th>Installed Size</th>
+              <th>Summary</th>
+              <th>IGDB</th>
+          </tr>
+        </thead>
+        <tbody class="list">
+          <tr v-for="(data, key) in dataList" :key="key">
+            <td><img v-bind:src="data.icon"></td>
+            <td class="name">{{ data.name }}</td>
+            <td>{{ data.genres.join(", ") }}</td>
+            <td v-if="data.coop.available">
+              <span class="new badge green" data-badge-caption="Min">{{ data.coop.min }}</span>
+              <span v-if="data.coop.max != -1" class="new badge blue" data-badge-caption="Max">{{ data.coop.max }}</span>
+              <span v-if="data.coop.max === -1" class="new badge blue" data-badge-caption="Max">Unlimited</span>
+            </td>
+            <td v-if="!data.coop.available">
+              <span class="new badge red" data-badge-caption="">Not Available</span>
+            </td>
+            <td v-if="data.multiplayer.available">
+              <span class="new badge green" data-badge-caption="Min">{{ data.multiplayer.min }}</span>
+              <span v-if="data.multiplayer.max != -1" class="new badge blue" data-badge-caption="Max">{{ data.multiplayer.max }}</span>
+              <span v-if="data.multiplayer.max === -1" class="new badge blue" data-badge-caption="Max">Unlimited</span>
+            </td>
+            <td v-else>
+              <span class="new badge red" data-badge-caption="">Not Available</span>
+            </td>
+            <td v-if="data.self_hosted">
+              <span class="new badge green" data-badge-caption="">Available</span>
+            </td>
+            <td v-else>
+              <span class="new badge red" data-badge-caption="">Not Available</span>
+            </td>
+            <td>{{ data.download_size }}</td>
+            <td>{{ data.installed_size }}</td>
+            <td><a class="waves-effect waves-light btn modal-trigger" v-bind:href="'#' + data.slug + '-details'">Summary</a></td>
+            <td><a class="btn-floating waves-effect waves-light purple" v-bind:href="'https://www.igdb.com/games/' + data.slug" target="_blank"><i class="material-icons">logout</i></a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div v-bind:id="data.slug + '-details'" class="modal bottom-sheet" v-for="(data, key) in dataList" :key="key">
+        <div class="modal-content">
+          <h4>{{ data.name }}</h4>
+          <p class="flow-text">{{ data.summary }}</p>
+        </div>
+      </div>
+    </main>
+  
+    <footer class="center">
+      <ul class="pagination"></ul>
+    </footer>
   </div>
 
   <!-- JS Library -->
@@ -30,24 +111,42 @@
   <script src="https://unpkg.com/axios"></script> <!--Axios -->
   <script src="https://unpkg.com/js-yaml"></script> <!--JS YAML -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script> <!--ListJS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script> <!--ChartJS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> <!--Materialize -->
+  <!-- Vanilla JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      M.AutoInit();
+    });
+  </script>
+  <!-- VueJS -->
   <script>
     Vue.createApp({
       data: () => ({
         dataList: [],
+        dataListTools: null,
       }),
       methods: {
         async getData() {
           try {
-            let response = axios.get('/database/database.yml');
+            let response = await axios.get('/database/database.yml');
             if (response !== null)
               this.dataList = jsyaml.load(response.data);
           } catch (error) { console.log(error); }
-        }
+        },
+        async initList() {
+          this.dataListTools = await new List('app', {
+            valueNames: [ 'name' ],
+            page: 5,
+            pagination: true
+          });
+          await this.dataListTools.sort('name', { order: "asc" });
+        },
       },
       mounted() {
-        this.getData();
+        this.getData().then(() => {
+          M.Modal.init(document.querySelectorAll('.modal'), {});
+          this.initList();
+        });
       },
     }).mount('#app')
   </script>

@@ -92,7 +92,6 @@ docker-compose up
   - [Axios](https://github.com/axios/axios)
   - [JS-YAML](https://github.com/nodeca/js-yaml)
   - [ListJS](https://listjs.com/)
-  - [ChartJS](https://www.chartjs.org/)
 - **CSS Framework** : [Materialize](https://materializecss.com/)
 
 ## Changelog
