@@ -128,7 +128,7 @@
       methods: {
         async getData() {
           try {
-            let response = await axios.get('/database/database.yml');
+            let response = await axios.get(window.location + 'database/database.yml');
             if (response !== null)
               this.dataList = jsyaml.load(response.data);
           } catch (error) { console.log(error); }
