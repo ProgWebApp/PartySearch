@@ -1,0 +1,19 @@
+coop:
+  max: 4
+  min: 2
+genres:
+- Role-playing (RPG)
+- Adventure
+icon: //images.igdb.com/igdb/image/upload/t_thumb/co249w.jpg
+id: dauntless
+multiplayer:
+  max: 0
+  min: 0
+name: Dauntless
+size: 15.0
+summary: Dauntless takes place in a fantasy setting, where a cataclysmic event has
+  torn the world apart, releasing monster-like Behemoths that prey on the surviving
+  humans. Players take on the role of Slayers to take down Behemoths, collecting loot
+  that they used to craft and upgrade weapons and equipment as to take down larger
+  and more powerful Behemoths.
+url: https://www.igdb.com/games/dauntless

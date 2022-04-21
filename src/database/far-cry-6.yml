@@ -1,0 +1,20 @@
+coop:
+  max: 2
+  min: 2
+genres:
+- Shooter
+- Adventure
+icon: //images.igdb.com/igdb/image/upload/t_thumb/co2npg.jpg
+id: far-cry-6
+multiplayer:
+  max: 0
+  min: 0
+name: Far Cry 6
+size: 70.0
+summary: Dive into the gritty world of a modern-day guerrilla revolution to liberate
+  a nation from its oppressive dictators. Welcome to Yara, a tropical paradise frozen
+  in time. Far Cry 6 thrusts players into a modern-day guerrilla revolution. As dictator
+  of Yara, Anton Castillo is intent on restoring his nation back to its former glory
+  by any means, with his son, Diego, following in his bloody footsteps. Become a guerrilla
+  fighter and liberate Yara.
+url: https://www.igdb.com/games/far-cry-6

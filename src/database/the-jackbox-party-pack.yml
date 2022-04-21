@@ -1,0 +1,28 @@
+coop:
+  max: 0
+  min: 0
+genres:
+- Puzzle
+- Strategy
+- Quiz/Trivia
+- Indie
+icon: //images.igdb.com/igdb/image/upload/t_thumb/co1uu3.jpg
+id: the-jackbox-party-pack
+multiplayer:
+  max: 10
+  min: 2
+name: The Jackbox Party Pack
+size: 3.0
+summary: 'This collection includes five same-room multiplayer party games.
+
+  A trivia game You Don''t Know Jack 2015 (1-4 players).
+
+  A bluffing game Fibbage XL (2-8 players), with over 50% more questions added to
+  the original hit game Fibbage.
+
+  A drawing game Drawful (3-8 players).
+
+  Word Spud (2-8 players).
+
+  Lie Swatter (1-100 players).'
+url: https://www.igdb.com/games/the-jackbox-party-pack

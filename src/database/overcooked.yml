@@ -1,0 +1,22 @@
+coop:
+  max: 4
+  min: 2
+genres:
+- Simulator
+- Strategy
+- Indie
+- Arcade
+icon: //images.igdb.com/igdb/image/upload/t_thumb/co262g.jpg
+id: overcooked
+multiplayer:
+  max: 4
+  min: 2
+name: Overcooked!
+size: 0.750
+summary: "Overcooked! is a co-op cooking game for 1-4 players. Working as a team,\
+  \ you and your fellow chefs must prepare, cook and serve up a variety of tasty orders\
+  \ before the baying customers storm out. \n \nTake part in an epic journey across\
+  \ the Onion Kingdom and tackle an increasingly challenging and bizarre gauntlet\
+  \ of kitchens which will push your skills of co-operation and co-ordination to the\
+  \ very limits."
+url: https://www.igdb.com/games/overcooked

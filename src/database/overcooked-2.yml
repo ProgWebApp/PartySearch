@@ -1,0 +1,21 @@
+coop:
+  max: 4
+  min: 2
+genres:
+- Simulator
+- Strategy
+- Tactical
+- Indie
+- Arcade
+icon: //images.igdb.com/igdb/image/upload/t_thumb/co1usu.jpg
+id: overcooked-2
+multiplayer:
+  max: 4
+  min: 2
+name: Overcooked! 2
+size: 3.0
+summary: "Overcooked returns with a brand-new helping of chaotic cooking action! Journey\
+  \ back to the Onion Kingdom and assemble your team of chefs in classic couch co-op\
+  \ or online play for up to four players. Hold onto your aprons\u2026 it\u2019s time\
+  \ to save the world again!"
+url: https://www.igdb.com/games/overcooked-2

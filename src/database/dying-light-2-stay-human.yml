@@ -1,0 +1,18 @@
+coop:
+  max: 4
+  min: 2
+genres:
+- Role-playing (RPG)
+- Adventure
+icon: //images.igdb.com/igdb/image/upload/t_thumb/co31k4.jpg
+id: dying-light-2-stay-human
+multiplayer:
+  max: 0
+  min: 0
+name: 'Dying Light 2: Stay Human'
+size: 60.0
+summary: The last great human settlement exists within an unforgiving, infected world.
+  Exceptional agility and combat skills make you a powerful ally and a valuable commodity.
+  With your unique abilities you have the power to be an agent of change within this
+  decaying metropolis. Use it wisely.
+url: https://www.igdb.com/games/dying-light-2-stay-human

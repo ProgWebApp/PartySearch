@@ -13,47 +13,42 @@
 
 ## Format
 
-This website contains a list of games with cooperation or multiplayer capacity. This game list is stored in a single file database in YAML Format to simplify the add of game.
+This website contains a list of games with cooperation or multiplayer capacity. This game list is stored in a multi file database in YAML Format to simplify the add of game.
 
 Each game have several fields :
 
 - **name** : Name of the Game
-- **slug** : IGDB Name
+- **id** : IGDB Name or Game ID (Name in lowercase without space)
+- **url** : URL of Game informations (IGDB URL or Game Official Page)
 - **summary** : Game Description
 - **icon** : URL of icon of the game
 - **genres** : List of genre of the game
 - **coop** : Cooperation fields
-  - **available** (true or false) : Cooperation available
-  - **min** (2) : Minimum number of player
-  - **max** (2) : Maximum number of player
+  - **min** : Minimum number of player (minimum of 2)
+  - **max** : Maximum number of player (minimum of 2 and -1 for infinite)
 - **multiplayer** : Multiplayer fields
-  - **available** (true or false) : Multiplayer available
-  - **min** (2) : Minimum number of player
-  - **max** (2) : Maximum number of player
-- **self_hosted** (true or false) : Server self hosted available
-- **download_size** (in Gb) : Size of the game to download at start
-- **installed_size** (in Gb) : Size of the game once it's installed
+  - **min** : Minimum number of player (minimum of 2)
+  - **max** : Maximum number of player (minimum of 2 and -1 for infinite)
+- **size** (in Gb) : Size of the game
 
 Exemple in YAML format :
 
 ```yaml
-- name: ''
-  slug: ''
-  summary: ''
-  icon : ''
-  genres:
-  - ''
-  coop:
-    available: true
-    min: 2
-    max: 4
-  multiplayer:
-    available: true
-    min: 4
-    max: 32
-  self_hosted: true
-  download_size: 1.5
-  installed_size: 2
+name: "Dying Light"
+id: "dying-light"
+summary: "Zombie Game."
+icon : "//images.igdb.com/igdb/image/upload/t_thumb/co3wml.jpg"
+genres:
+- "Shooter"
+- "Role-playing (RPG)"
+- "Adventure"
+coop:
+  min: 2
+  max: 4
+multiplayer:
+  min: 0
+  max: 0
+size: 40.0
 ```
 
 ## How to add a new Game
@@ -62,12 +57,16 @@ To add a new game, you have two possibility :
 
 ### Fully Manual Mode
 
-1) Go to [IGDB](https://www.igdb.com/) and search the game you want to add.
-2) Check if the game not already exist in the database file (**src/database/database.yml**)
-3) Get each information bellow and dispose these into the database file.
+1) Go to [IGDB](https://www.igdb.com/) and search the game you want to add or search on the **official game website**.
+2) Check if the game not already exist in the **database main file** (**src/database/_database.yml**) (use CTRL + F to find the game name in lowercase without space)
+   1) If the game **already exist**, you can **update** it with the edit of the file listed in the **database main file** (**src/database/_database.yml**)
+   2) Else get each information bellow and dispose these into a **new database file** with the **id of the game** as **file name** and register it in the **database main file** (**src/database/_database.yml**).
 
 ### Semi-Auto Mode
 
 1) Go to [IGDB](https://www.igdb.com/) and search the game you want to add.
-2) Get in the IGDB URL the "slug" name of the game (end of url, Dying Light = dying-light)
-3) Fill the last data in the database file (coop, multiplayer, self_hosted, download_size and installed_size).
+2) Get in the IGDB URL the "slug" or "id" name of the game (end of url, game name in lowercase without space, Dying Light = dying-light)
+3) Use the [IGDB Script](./igdb.md) to **update** or **create** a **new entry** for this game in the **database**.
+4) Fill the **last data** in the database file (coop, multiplayer, and size) **if needed**.
+
+Great and thanks for update our database.

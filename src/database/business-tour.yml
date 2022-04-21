@@ -1,0 +1,17 @@
+coop:
+  max: 0
+  min: 0
+genres:
+- Real Time Strategy (RTS)
+- Strategy
+- Indie
+icon: //images.igdb.com/igdb/image/upload/t_thumb/co2303.jpg
+id: business-tour
+multiplayer:
+  max: 4
+  min: 2
+name: Business Tour
+size: 0.3
+summary: Business Tour is an online board game based on the most popular tabletop
+  game in the world.
+url: https://www.igdb.com/games/business-tour

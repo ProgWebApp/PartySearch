@@ -1,0 +1,22 @@
+coop:
+  max: 2
+  min: 2
+genres:
+- Shooter
+- Racing
+- Adventure
+icon: //images.igdb.com/igdb/image/upload/t_thumb/co2634.jpg
+id: saints-row-the-third
+multiplayer:
+  max: 0
+  min: 0
+name: 'Saints Row: The Third'
+size: 7.0
+summary: 'Saints Row: The Third is the first Saints Row game that takes place in the
+  city of Steelport. Much like the first two games, the story revolves around the
+  Saints destroying and absorbing three rival gangs, taking over the city in the process.
+  In Saints Row: The Third, these three gangs are the Morningstar, the Luchadores,
+  and the Deckers. Unlike the first two games, these three gangs are all controlled
+  by a criminal organization known as The Syndicate, which the saints must also deal
+  with.'
+url: https://www.igdb.com/games/saints-row-the-third

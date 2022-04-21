@@ -1,0 +1,23 @@
+coop:
+  max: -1
+  min: 2
+genres:
+- Shooter
+- Role-playing (RPG)
+- Simulator
+- Strategy
+- Adventure
+- Indie
+icon: //images.igdb.com/igdb/image/upload/t_thumb/co2rf9.jpg
+id: starmade
+multiplayer:
+  max: -1
+  min: 2
+name: Starmade
+size: 3.0
+summary: StarMade is a 3D sandbox space shooter created by Robin "schema" Promesberger,
+  founder of Schine. The game allows players to explore the vastness of space; building
+  factories; creating ships, space stations and structures out of various block types.
+  Both single-player worlds and multi-player servers are available players. StarMade
+  is currently in Alpha, and is a free-to-play game.
+url: https://www.igdb.com/games/starmade

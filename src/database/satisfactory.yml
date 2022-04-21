@@ -1,0 +1,20 @@
+coop:
+  max: 4
+  min: 2
+genres:
+- Simulator
+- Strategy
+- Adventure
+- Indie
+icon: //images.igdb.com/igdb/image/upload/t_thumb/co1i2d.jpg
+id: satisfactory
+multiplayer:
+  max: 0
+  min: 0
+name: Satisfactory
+size: 15.0
+summary: "Satisfactory is an FPS open-world factory building sim. You play as an engineer\
+  \ on an alien planet tasked to complete \u2018Project Assembly\u2019 - a massive\
+  \ machine for a mysterious purpose. Conquer nature, build multi-story factories,\
+  \ and automate to satisfaction!"
+url: https://www.igdb.com/games/satisfactory

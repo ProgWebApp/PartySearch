@@ -9,6 +9,7 @@
   - [Description](#description)
   - [Getting Started](#getting-started)
     - [Requirements](#requirements)
+    - [Environment Variables](#environment-variables)
     - [Build and Deploy](#build-and-deploy)
   - [Technologies Used](#technologies-used)
 
@@ -18,13 +19,23 @@
 
 ## Getting Started
 
-1) Copy the **igdb/.env.sample** file into **igdb/.env** file and complete it with your credentials
-2) [Build and deploy](#build-and-deploy) the tool
+1) You need to install the [Requirements](#requirements)
+2) Create the **igdb/.env** file with the **igdb/.env.sample** file by refering to the [Environment Variables](#environment-variables)
+3) [Build and deploy](#build-and-deploy) the tool
 
 ### Requirements
 
 - Docker
 - Docker Compose
+
+### Environment Variables
+
+| Parameter | Value Example | Description |
+|-|-|-|
+| IGDB_GAME_NAME | Single Game "minecraft" or multiple game "minecraft dying-light" | Game to create or update in database |
+| IGDB_CLIENT_ID | XXXXX | IGDB API Client ID |
+| IGDB_CLIENT_SECRET | XXXXX | IGDB API Client Secret |
+|  |  |  |
 
 ### Build and Deploy
 
@@ -42,7 +53,12 @@ You can also do it with a inline command (after build) :
 
 ```bash
 cd igdb
+
+# Single Game to update or create
 docker-compose run --rm partysearch_igdb pdm run launch minecraft
+
+# Multiple Game to update or create
+docker-compose run --rm partysearch_igdb pdm run launch minecraft dying-light
 ```
 
 ## Technologies Used

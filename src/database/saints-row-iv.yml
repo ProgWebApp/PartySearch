@@ -1,0 +1,21 @@
+coop:
+  max: 2
+  min: 2
+genres:
+- Shooter
+- Adventure
+icon: //images.igdb.com/igdb/image/upload/t_thumb/co1nrn.jpg
+id: saints-row-iv
+multiplayer:
+  max: 0
+  min: 0
+name: Saints Row IV
+size: 10.0
+summary: Unlike the first three games in the franchise, Saints Row 4 does not center
+  around the main character defeating three rival gangs in order to take over a city.
+  The Saints have now become a household name, and their leader has become the president
+  of the Unites States. The antagonists in Saints Row 4 are an invading alien race
+  known as the Zin. Most of the game takes place within a computer simulation of the
+  city of Steelport controlled by the Zin, where the protagonist is attempting to
+  free himself and his companions.
+url: https://www.igdb.com/games/saints-row-iv

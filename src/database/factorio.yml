@@ -1,0 +1,20 @@
+coop:
+  max: -1
+  min: 2
+genres:
+- Simulator
+- Strategy
+- Indie
+icon: //images.igdb.com/igdb/image/upload/t_thumb/co1tfy.jpg
+id: factorio
+multiplayer:
+  max: 0
+  min: 0
+name: Factorio
+size: 3.0
+summary: You will be mining resources, researching technologies, building infrastructure,
+  automating production and fighting enemies. Use your imagination to design your
+  factory, combine simple elements into ingenious structures, apply management skills
+  to keep it working and finally protect it from the creatures who don't really like
+  you.
+url: https://www.igdb.com/games/factorio

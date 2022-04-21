@@ -59,11 +59,9 @@
               <th>Genres</th>
               <th>Coop</th>
               <th>Multiplayer</th>
-              <th>Self Hosted</th>
-              <th>Download Size</th>
-              <th>Installed Size</th>
+              <th>Size</th>
               <th>Summary</th>
-              <th>IGDB</th>
+              <th>Link</th>
           </tr>
         </thead>
         <tbody class="list">
@@ -71,15 +69,15 @@
             <td><img v-bind:src="data.icon"></td>
             <td class="name">{{ data.name }}</td>
             <td>{{ data.genres.join(", ") }}</td>
-            <td v-if="data.coop.available">
+            <td v-if="data.coop.min != 0 && data.coop.max != 0">
               <span class="new badge green" data-badge-caption="Min">{{ data.coop.min }}</span>
               <span v-if="data.coop.max != -1" class="new badge blue" data-badge-caption="Max">{{ data.coop.max }}</span>
               <span v-if="data.coop.max === -1" class="new badge blue" data-badge-caption="Max">Unlimited</span>
             </td>
-            <td v-if="!data.coop.available">
+            <td v-else>
               <span class="new badge red" data-badge-caption="">Not Available</span>
             </td>
-            <td v-if="data.multiplayer.available">
+            <td v-if="data.multiplayer.min != 0 && data.multiplayer.max != 0">
               <span class="new badge green" data-badge-caption="Min">{{ data.multiplayer.min }}</span>
               <span v-if="data.multiplayer.max != -1" class="new badge blue" data-badge-caption="Max">{{ data.multiplayer.max }}</span>
               <span v-if="data.multiplayer.max === -1" class="new badge blue" data-badge-caption="Max">Unlimited</span>
@@ -87,21 +85,19 @@
             <td v-else>
               <span class="new badge red" data-badge-caption="">Not Available</span>
             </td>
-            <td v-if="data.self_hosted">
-              <span class="new badge green" data-badge-caption="">Available</span>
+            <td v-if="data.size === 0">
+              <span class="new badge orange" data-badge-caption="">Unknown</span>
             </td>
             <td v-else>
-              <span class="new badge red" data-badge-caption="">Not Available</span>
+              <span class="new badge purple" data-badge-caption="GB">{{ data.size }}</span>
             </td>
-            <td>{{ data.download_size }}</td>
-            <td>{{ data.installed_size }}</td>
-            <td><a class="waves-effect waves-light btn modal-trigger" v-bind:href="'#' + data.slug + '-details'">Summary</a></td>
-            <td><a class="btn-floating waves-effect waves-light purple" v-bind:href="'https://www.igdb.com/games/' + data.slug" target="_blank"><i class="material-icons">logout</i></a></td>
+            <td><a class="waves-effect waves-light btn modal-trigger" v-bind:href="'#' + data.id + '-details'">Summary</a></td>
+            <td><a class="btn-floating waves-effect waves-light purple" v-bind:href="data.url" target="_blank"><i class="material-icons">logout</i></a></td>
           </tr>
         </tbody>
       </table>
 
-      <div v-bind:id="data.slug + '-details'" class="modal bottom-sheet" v-for="(data, key) in dataList" :key="key">
+      <div v-bind:id="data.id + '-details'" class="modal bottom-sheet" v-for="(data, key) in dataList" :key="key">
         <div class="modal-content">
           <h4>{{ data.name }}</h4>
           <p class="flow-text">{{ data.summary }}</p>
@@ -137,9 +133,17 @@
       methods: {
         async getData() {
           try {
-            let response = await axios.get(window.location + 'database/database.yml');
-            if (response !== null)
-              this.dataList = jsyaml.load(response.data);
+            let response = await axios.get(window.location + 'database/_database.yml');
+            let games = []
+            if (response !== null) {
+              games = jsyaml.load(response.data);
+              for (let index = 0; index < games.length; index++) {
+                const element = games[index];
+                let response = await axios.get(window.location + `database/${element}.yml`);
+                if (response !== null)
+                  this.dataList.push(jsyaml.load(response.data));
+              }
+            }
           } catch (error) { console.log(error); }
         },
         async initList() {

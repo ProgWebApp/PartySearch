@@ -1,0 +1,20 @@
+coop:
+  max: 4
+  min: 4
+genres:
+- Shooter
+- Simulator
+- Strategy
+- Adventure
+icon: //images.igdb.com/igdb/image/upload/t_thumb/co1nza.jpg
+id: warface
+multiplayer:
+  max: -1
+  min: 2
+name: Warface
+size: 30.0
+summary: 'Join a five soldier team and take the fight to Blackwood across the globe.
+  Your team will have to master each class''s special abilities in order to come out
+  victorious. Missions and location are renewed on a daily basis and can be played
+  on each difficulty: Regular, Skilled, or Hardcore.'
+url: https://www.igdb.com/games/warface

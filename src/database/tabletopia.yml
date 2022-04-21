@@ -1,0 +1,20 @@
+coop:
+  max: -1
+  min: 2
+genres:
+- Role-playing (RPG)
+- Simulator
+- Strategy
+- Indie
+icon: //images.igdb.com/igdb/image/upload/t_thumb/co2rin.jpg
+id: tabletopia
+multiplayer:
+  max: -1
+  min: 2
+name: Tabletopia
+size: 0.0
+summary: 'Tabletopia is the only free-to-play sandbox virtual table with 100% licensed
+  board games and ready setups. Already 300 games and counting! Play how you want
+  with whom you want: guests don''t need accounts to play. Or make your own games,
+  no programming skills required.'
+url: https://www.igdb.com/games/tabletopia

@@ -1,0 +1,23 @@
+coop:
+  max: 8
+  min: 2
+genres:
+- Platform
+- Role-playing (RPG)
+- Adventure
+- Indie
+icon: //images.igdb.com/igdb/image/upload/t_thumb/co4b19.jpg
+id: starbound
+multiplayer:
+  max: 0
+  min: 0
+name: Starbound
+size: 4.0
+summary: "You\u2019ve fled your home, only to find yourself lost in space with a damaged\
+  \ ship. Your only option is to beam down to the planet below and gather the resources\
+  \ you need to repair your ship and set off to explore the vast, infinite universe\u2026\
+  \n\nIn Starbound, you create your own story - there\u2019s no wrong way to play!\
+  \ You may choose to save the universe from the forces that destroyed your home,\
+  \ uncovering greater galactic mysteries in the process, or you may wish to forego\
+  \ a heroic journey entirely in favor of colonizing uncharted planets."
+url: https://www.igdb.com/games/starbound

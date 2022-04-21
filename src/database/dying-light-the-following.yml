@@ -1,0 +1,19 @@
+coop:
+  max: 4
+  min: 2
+genres:
+- Shooter
+- Adventure
+icon: //images.igdb.com/igdb/image/upload/t_thumb/co1kwl.jpg
+id: dying-light-the-following
+multiplayer:
+  max: 0
+  min: 0
+name: 'Dying Light: The Following'
+size: 40.0
+summary: "Dying Light: The Following is a massive expansion to Dying Light and the\
+  \ untold chapter of Kyle Crane\u2019s story. Take to a vast new area that will transform\
+  \ your Dying Light experience through new game mechanics, environments and challenges\
+  \ on top of the established core of what made Dying Light a break away success for\
+  \ millions of players around the globe."
+url: https://www.igdb.com/games/dying-light-the-following

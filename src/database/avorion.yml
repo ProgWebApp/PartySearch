@@ -1,0 +1,21 @@
+coop:
+  max: 10
+  min: 2
+genres:
+- Simulator
+- Indie
+icon: //images.igdb.com/igdb/image/upload/t_thumb/co1puf.jpg
+id: avorion
+multiplayer:
+  max: -1
+  min: 2
+name: Avorion
+size: 3.0
+summary: Avorion is a procedurally generated sci-fi sandbox where players start out
+  at the edge of the galaxy and must find their way to its core. Players build their
+  own ships, which they will use to explore the galaxy, trade and fight. Space ships
+  are mainly of large scale, with crews, turrets and energy systems that you will
+  have to manage. The galaxy gets more hostile, but also more rewarding the closer
+  players get to its core. You're free to play however you want, as a mercenary, freighter
+  captain, admiral, scavenger or pirate, it's all up to you.
+url: https://www.igdb.com/games/avorion

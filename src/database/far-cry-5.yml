@@ -1,0 +1,23 @@
+coop:
+  max: 2
+  min: 2
+genres:
+- Shooter
+- Adventure
+icon: //images.igdb.com/igdb/image/upload/t_thumb/co21a6.jpg
+id: far-cry-5
+multiplayer:
+  max: 12
+  min: 2
+name: Far Cry 5
+size: 30.0
+summary: "Welcome to Hope County, Montana, land of the free and the brave, but also\
+  \ home to a fanatical doomsday cult known as The Project at Eden\u2019s Gate that\
+  \ is threatening the community's freedom. Stand up to the cult\u2019s leader, Joseph\
+  \ Seed and the Heralds, and spark the fires of resistance that will liberate the\
+  \ besieged community.\n\nIn this expansive world, your limits and creativity will\
+  \ be tested against the biggest and most ruthless baddest enemy Far Cry has ever\
+  \ seen. It\u2019ll be wild and it\u2019ll get weird, but as long as you keep your\
+  \ wits about you, the residents of Hope County can rest assured knowing you\u2019\
+  re their beacon of hope."
+url: https://www.igdb.com/games/far-cry-5

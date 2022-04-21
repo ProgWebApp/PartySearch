@@ -1,0 +1,16 @@
+coop:
+  max: 3
+  min: 2
+genres:
+- Role-playing (RPG)
+icon: //images.igdb.com/igdb/image/upload/t_thumb/co4jni.jpg
+id: elden-ring
+multiplayer:
+  max: 3
+  min: 2
+name: Elden Ring
+size: 60.0
+summary: Elden Ring is a fantasy, action and open world game with RPG elements such
+  as stats, weapons and spells. Rise, Tarnished, and be guided by grace to brandish
+  the power of the Elden Ring and become an Elden Lord in the Lands Between.
+url: https://www.igdb.com/games/elden-ring
