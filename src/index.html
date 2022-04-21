@@ -24,7 +24,7 @@
       <nav>
         <div class="nav-wrapper purple lighten-2">
           <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-          <a href="/" class="brand-logo center">PartySearch</a>
+          <a href="/" class="brand-logo center">PartySearch ({{ nb_items }} Games)</a>
         </div>
       </nav>
 
@@ -44,6 +44,39 @@
               <input v-model="nb_page" @change="updateNbPage()" class="col s6" type="range" min="5" max="100" step="5" />
               <span class="new badge col s6" data-badge-caption="games per page">{{ nb_page }}</span>
             </p>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <div class="input-field col s12">
+              <select v-model="sort" @change="updateSort()">
+                <option value="name" selected>Name ASC</option>
+                <option value="-name">Name DESC</option>
+                <option value="size">Size ASC</option>
+                <option value="-size">Size DESC</option>
+              </select>
+              <label>Order By</label>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <div class="col s6">
+              <p>
+                <label>
+                  <input v-model="filter.coop" @change="updateFilter()" type="checkbox" />
+                  <span>Coop</span>
+                </label>
+              </p>
+            </div>
+            <div class="col s6">
+              <p>
+                <label>
+                  <input v-model="filter.multiplayer" @change="updateFilter()" type="checkbox" />
+                  <span>Multi</span>
+                </label>
+              </p>
+            </div>
           </div>
         </li>
       </ul>
@@ -68,28 +101,28 @@
           <tr v-for="(data, key) in dataList" :key="key">
             <td><img v-bind:src="data.icon"></td>
             <td class="name">{{ data.name }}</td>
-            <td>{{ data.genres.join(", ") }}</td>
+            <td class="genres">{{ data.genres.join(", ") }}</td>
             <td v-if="data.coop.min != 0 && data.coop.max != 0">
-              <span class="new badge green" data-badge-caption="Min">{{ data.coop.min }}</span>
-              <span v-if="data.coop.max != -1" class="new badge blue" data-badge-caption="Max">{{ data.coop.max }}</span>
-              <span v-if="data.coop.max === -1" class="new badge blue" data-badge-caption="Max">Unlimited</span>
+              <span class="new badge green coop_min" data-badge-caption="Min">{{ data.coop.min }}</span>
+              <span v-if="data.coop.max != -1" class="new badge blue coop_max" data-badge-caption="Max">{{ data.coop.max }}</span>
+              <span v-if="data.coop.max === -1" class="new badge blue coop_max" data-badge-caption="Max">Unlimited</span>
             </td>
             <td v-else>
-              <span class="new badge red" data-badge-caption="">Not Available</span>
+              <span class="new badge red coop_min coop_max" data-badge-caption="">Not Available</span>
             </td>
             <td v-if="data.multiplayer.min != 0 && data.multiplayer.max != 0">
-              <span class="new badge green" data-badge-caption="Min">{{ data.multiplayer.min }}</span>
-              <span v-if="data.multiplayer.max != -1" class="new badge blue" data-badge-caption="Max">{{ data.multiplayer.max }}</span>
-              <span v-if="data.multiplayer.max === -1" class="new badge blue" data-badge-caption="Max">Unlimited</span>
+              <span class="new badge green multiplayer_min" data-badge-caption="Min">{{ data.multiplayer.min }}</span>
+              <span v-if="data.multiplayer.max != -1" class="new badge blue multiplayer_max" data-badge-caption="Max">{{ data.multiplayer.max }}</span>
+              <span v-if="data.multiplayer.max === -1" class="new badge blue multiplayer_max" data-badge-caption="Max">Unlimited</span>
             </td>
             <td v-else>
-              <span class="new badge red" data-badge-caption="">Not Available</span>
+              <span class="new badge red multiplayer_min multiplayer_max" data-badge-caption="">Not Available</span>
             </td>
             <td v-if="data.size === 0">
-              <span class="new badge orange" data-badge-caption="">Unknown</span>
+              <span class="new badge orange size" data-badge-caption="">Unknown</span>
             </td>
             <td v-else>
-              <span class="new badge purple" data-badge-caption="GB">{{ data.size }}</span>
+              <span class="new badge purple size" data-badge-caption="GB">{{ data.size }}</span>
             </td>
             <td><a class="waves-effect waves-light btn modal-trigger" v-bind:href="'#' + data.id + '-details'">Summary</a></td>
             <td><a class="btn-floating waves-effect waves-light purple" v-bind:href="data.url" target="_blank"><i class="material-icons">logout</i></a></td>
@@ -128,7 +161,13 @@
       data: () => ({
         dataList: [],
         dataListTools: null,
+        nb_items: 0,
         nb_page: 5,
+        sort: "name",
+        filter: {
+          coop: true,
+          multiplayer: true,
+        },
       }),
       methods: {
         async getData() {
@@ -137,8 +176,8 @@
             let games = []
             if (response !== null) {
               games = jsyaml.load(response.data);
-              for (let index = 0; index < games.length; index++) {
-                const element = games[index];
+              for (let i = 0; i < games.length; i++) {
+                const element = games[i];
                 let response = await axios.get(window.location + `database/${element}.yml`);
                 if (response !== null)
                   this.dataList.push(jsyaml.load(response.data));
@@ -148,15 +187,34 @@
         },
         async initList() {
           this.dataListTools = await new List('app', {
-            valueNames: [ 'name' ],
+            valueNames: [ 'name', 'genres', 'coop_min', 'coop_max', 'multiplayer_min', 'multiplayer_max', 'size' ],
             page: this.nb_page,
-            pagination: true
+            pagination: true,
           });
           await this.dataListTools.sort('name', { order: "asc" });
+          this.nb_items = this.dataListTools.size();
         },
         async updateNbPage() {
           await this.dataListTools.show(1, this.nb_page);
-        }
+        },
+        async updateSort() {
+          if (this.sort === 'name') await this.dataListTools.sort('name', {order: "asc"});
+          if (this.sort === '-name') await this.dataListTools.sort('name', {order: "desc"});
+          if (this.sort === 'size') await this.dataListTools.sort('size', {order: "asc"});
+          if (this.sort === '-size') await this.dataListTools.sort('size', {order: "desc"});
+        },
+        async updateFilter() {
+          let filter = this.filter;
+          let nb_items = 0;
+          await this.dataListTools.filter(function(item) {
+            let display = true;
+            if (item.values().coop_min !== "Not Available" && !filter.coop) display = false;
+            if (item.values().multiplayer_min !== "Not Available" && !filter.multiplayer) display = false;
+            if (display) nb_items++;
+            return display;
+          });
+          this.nb_items = nb_items;
+        },
       },
       mounted() {
         this.getData().then(() => {
