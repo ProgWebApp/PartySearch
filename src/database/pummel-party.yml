@@ -1,0 +1,18 @@
+coop:
+  max: 0
+  min: 0
+genres:
+- Indie
+- Arcade
+- Card & Board Game
+icon: //images.igdb.com/igdb/image/upload/t_thumb/co20uq.jpg
+id: pummel-party
+multiplayer:
+  max: 8
+  min: 2
+name: Pummel Party
+size: 1.0
+summary: Pummel Party is a 4-player online and local-multiplayer party game. Pummel
+  friends or AI using a wide array of absurd items in the board mode and compete to
+  destroy friendships in the unique collection of minigames.
+url: https://www.igdb.com/games/pummel-party
