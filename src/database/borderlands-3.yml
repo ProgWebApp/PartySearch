@@ -1,0 +1,17 @@
+coop:
+  max: 4
+  min: 2
+genres:
+- Shooter
+icon: //images.igdb.com/igdb/image/upload/t_thumb/co20r3.jpg
+id: borderlands-3
+multiplayer:
+  max: 0
+  min: 0
+name: Borderlands 3
+size: 75.0
+summary: The original shooter-looter returns, packing bazillions of guns and a mayhem-fueled
+  adventure! Blast through new worlds and enemies as one of four new Vault Hunters.
+  Play solo or with friends to take on insane enemies, score loads of loot and save
+  your home from the most ruthless cult leaders in the galaxy.
+url: https://www.igdb.com/games/borderlands-3
