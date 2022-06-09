@@ -1,0 +1,17 @@
+coop:
+  max: 8
+  min: 3
+genres:
+- Role-playing (RPG)
+- Simulator
+- Strategy
+- Indie
+icon: https://f.tabletopia.com/c/000/133/Jw8o39hYKXb2zhxAhKUSB1.png
+id: tabletopia-spyfall
+multiplayer:
+  max: 8
+  min: 3
+name: 'Tabletopia: SpyFall'
+size: 0.0
+summary: "Spyfall is a party game unlike any other, one in which you get to be a spy and try to understand what's going on around you. It's really simple !"
+url: https://tabletopia.com/games/spyfall

@@ -1,0 +1,17 @@
+coop:
+  max: 5
+  min: 3
+genres:
+- Role-playing (RPG)
+- Simulator
+- Strategy
+- Indie
+icon: https://f.tabletopia.com/c/005/359/OKyNdRUbqTAEzx3y8SetcL.png
+id: tabletopia-the-crew
+multiplayer:
+  max: 5
+  min: 3
+name: 'Tabletopia: The Crew'
+size: 0.0
+summary: "In the co-operative trick-taking game The Crew: The Quest for Planet Nine, the players set out as astronauts on an uncertain space adventure. What about the rumors about the unknown planet about? The eventful journey through space extends over 50 exciting missions. But this game can only be defeated..."
+url: https://tabletopia.com/games/the-quest-for-planet-nine

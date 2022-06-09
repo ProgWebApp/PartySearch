@@ -1,0 +1,17 @@
+coop:
+  max: 0
+  min: 0
+genres:
+- Role-playing (RPG)
+- Simulator
+- Strategy
+- Indie
+icon: https://f.tabletopia.com/c/005/903/bWHbCHAGyyXPrEOigQ4Z89.png
+id: tabletopia-love-letter
+multiplayer:
+  max: 6
+  min: 2
+name: 'Tabletopia: Love Letter'
+size: 0.0
+summary: "The noble Princess is looking for an ideal partner and confidant to help with her royal duties when she one day assumes the throne. You must prove your worth and gain her trust by enlisting allies, friends, and family of the Princess to carry a letter of intent to her. Can you earn the Princess' trust and become her confidant ?"
+url: https://tabletopia.com/games/love_letter_z-man
