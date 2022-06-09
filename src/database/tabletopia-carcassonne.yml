@@ -1,0 +1,17 @@
+coop:
+  max: 0
+  min: 0
+genres:
+- Role-playing (RPG)
+- Simulator
+- Strategy
+- Indie
+icon: https://f.tabletopia.com/c/004/792/lGJzc7qnkkMQwoxDqjEAJ2.png
+id: tabletopia-carcassonne
+multiplayer:
+  max: 5
+  min: 2
+name: 'Tabletopia: Carcassonne Hunters and Gatherers '
+size: 0.0
+summary: "Thousands of years before the people of Carcassonne built mighty walls and castles, their ancestors settled the land. They hunted wild animals, gathered berries, and caught fish to ensure their daily survival and continued prosperity. Even today, fantastic cave paintings and prehistoric data testify... "
+url: https://tabletopia.com/games/carcassonne-hunters-and-gatherers
