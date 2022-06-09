@@ -99,7 +99,7 @@
         </thead>
         <tbody class="list">
           <tr v-for="(data, key) in dataList" :key="key">
-            <td><img v-bind:src="data.icon"></td>
+            <td><img class="materialboxed" width="100" height="100" v-bind:src="data.icon"></td>
             <td class="name">{{ data.name }}</td>
             <td class="genres">{{ data.genres.join(", ") }}</td>
             <td v-if="data.coop.min != 0 && data.coop.max != 0">
@@ -219,6 +219,7 @@
       mounted() {
         this.getData().then(() => {
           M.Modal.init(document.querySelectorAll('.modal'), {});
+          M.Materialbox.init(document.querySelectorAll('.materialboxed'), {});
           this.initList();
         });
       },
