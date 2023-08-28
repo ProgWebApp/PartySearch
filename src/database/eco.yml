@@ -1,12 +1,12 @@
-name: "Eco"
-id: "eco--1"
-url: "https://www.igdb.com/games/eco--1"
+name: 'Eco'
+id: 'eco--1'
+url: 'https://www.igdb.com/games/eco--1'
 summary: Enter the world of Eco, a fully simulated ecosystem bustling with thousands of growing plants and animals living their lives. Build, harvest, and take resources from an environment where your every action affects the world around you. An imminent meteor strike threatens global destruction. Can you save the world without destroying it in the process ?
-icon : "//images.igdb.com/igdb/image/upload/t_cover_big/co1wlv.png"
+icon: '//images.igdb.com/igdb/image/upload/t_cover_big/co1wlv.png'
 genres:
-- "Adventure"
-- "Indie"
-- "Simulator"
+  - 'Adventure'
+  - 'Indie'
+  - 'Simulator'
 coop:
   min: 2
   max: -1

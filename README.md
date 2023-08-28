@@ -14,8 +14,7 @@
   - [Access](#access)
   - [Getting Started](#getting-started)
     - [Requirements](#requirements)
-    - [Build](#build)
-    - [Deploy](#deploy)
+    - [Build and Deploy](#build-and-deploy)
   - [Technologies Used](#technologies-used)
   - [Changelog](#changelog)
   - [Documentations](#documentations)
@@ -39,7 +38,7 @@ You can add game to this static database with this [documentation](./docs/databa
 
 ## Getting Started
 
-Here a sample of Docker Compose file : **docker-compose.yml**
+Here a sample of Docker Compose file : **docker compose.yml**
 
 ```yaml
 ---
@@ -65,24 +64,12 @@ services:
 - Docker
 - Docker Compose
 
-### Build
+### Build and Deploy
 
 ```bash
-# Development
-docker-compose -f docker-compose.dev.yml build
+docker compose build
 
-# Production
-docker-compose build
-```
-
-### Deploy
-
-```bash
-# Development
-docker-compose -f docker-compose.dev.yml up
-
-# Production
-docker-compose up
+docker compose up
 ```
 
 ## Technologies Used

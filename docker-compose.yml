@@ -9,13 +9,13 @@ services:
       context: .
       dockerfile: Dockerfile
     healthcheck:
-      test: ["CMD", "wget", "-O", "/dev/null", "http://localhost:80"]
+      test: ['CMD', 'wget', '-O', '/dev/null', 'http://localhost:80']
       interval: 1m
       timeout: 30s
       retries: 3
       start_period: 10s
     volumes:
-    - ./src:/usr/share/nginx/html:ro
+      - ./src:/usr/share/nginx/html:ro
     ports:
-    - 8080:80
+      - 8087:80
     restart: unless-stopped
