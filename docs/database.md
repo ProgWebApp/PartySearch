@@ -36,6 +36,7 @@ Exemple in YAML format :
 ```yaml
 name: "Dying Light"
 id: "dying-light"
+url: "https://www.igdb.com/games/dying-light"
 summary: "Zombie Game."
 icon : "//images.igdb.com/igdb/image/upload/t_thumb/co3wml.jpg"
 genres:
